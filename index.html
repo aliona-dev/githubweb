@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myForm</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="text_center">
+        <h1>Vacation Destinations Wishlist</h1>
+        <h3>
+          Found exciting places to visition on your next vacation? Use the form
+          below to add them to your wishlist 
+        </h3>
+      </div>
+      <form id="myForm">
+        <div class="input_block">
+          <div><label for="destination"> Destination name</label></div>
+          <input
+            type="text"
+            placeholder="Enter the name of the destination"
+            name="destination"
+            id="destination"
+          />
+        </div>
+
+        <div class="input_block">
+          <div><label for="location">Location</label></div>
+          <input
+            type="location"
+            name="location"
+            placeholder="Where is it located?"
+            id="location"
+          />
+        </div>
+
+        <div>
+          <div class="input_block">
+            <label for="img">Photo</label>
+          </div>
+          <input
+            type="img"
+            name="img"
+            placeholder="Enter an image url of the place"
+            id="img"
+          />
+        </div>
+
+        <div class="input_block">
+          <div><label for="description">Description</label></div>
+          <input
+            type="description"
+            placeholder="Where is it located?"
+            name="description"
+            id="description"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
