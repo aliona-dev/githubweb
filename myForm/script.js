@@ -1,4 +1,4 @@
-document.querySelector("#add_btn").addEventListener("submit", formFunc);
+document.getElementById("add_btn").addEventListener("submit", formFunc);
 
 function formFunc(e) {
   //prevent default and keep it from refreshing on submit.
