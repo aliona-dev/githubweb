@@ -1,4 +1,4 @@
-document.getElementById("add_btn").addEventListener("submit", formFunc);
+document.querySelector("#add_btn").addEventListener("submit", formFunc);
 
 function formFunc(e) {
   //prevent default and keep it from refreshing on submit.
@@ -16,13 +16,12 @@ function formFunc(e) {
   let destImg = e.target.elements["img"].value;
   let destDescription = e.target.elements["description"].value;
 
-  let allElementsContainer = destCard(
+  var allElementsContainer = destCard(
     destName,
     destDescription,
     destImg,
     destLocation
   );
-
   let cardContainer = document.querySelector(".destination_card");
 
   //   if (!cardContainer.contains(child)) {
@@ -57,50 +56,23 @@ function destCard(destination, location, img, description) {
   }
   card.appendChild(imgUrl);
 
-  // Create and set attributes for the text in the card
+  // Create and set attributes for the text in the card body.
   document.createElement("div").setAttribute("class", "card-body");
 
-  let cardTitle = document.createElement("h5");
-  cardTitle.setAttribute("class", "title");
-  cardTitle.innerText = destination;
-  cardBody.appendChild(cardTitle);
+  let elementTitle = document.createElement("h5");
+  elementTitle.setAttribute("class", "title");
+  elementTitle.innerText = destination;
+  elementCardBody.appendChild(elementTitle);
 
-  let cardSubtitle = document.createElement("h6");
-  cardSubtitle.setAttribute("class", "card-subtitle mb-2 text-muted");
-  cardSubtitle.innerText = location;
-  cardBody.appendChild(cardSubtitle);
+  let textSubtitle = document.createElement("h6");
+  textSubtitle.setAttribute("class", "card-subtitle mb-2 text-muted");
+  textSubtitle.innerText = location;
+  elementCardBody.appendChild(textSubtitle);
 
   if (description.length !== 0) {
-    let cardText = document.createElement("p");
-    cardText.setAttribute("class", "card-text");
-    cardText.innerText = description;
-    cardBody.appendChild(cardText);
+    let pText = document.createElement("p");
+    pText.setAttribute("class", "card-text");
+    pText.innerHTML = description;
+    elementCardBody.appendChild(pText);
   }
-
-  var buttonsContainer = document.createElement("div");
-  buttonsContainer.setAttribute("class", "buttons_container");
-
-  var cardEditBtn = document.createElement("button");
-  cardEditBtn.setAttribute("class", "btn btn-warning");
-  cardEditBtn.innerText = "Edit";
-  cardEditBtn.addEventListener("click", editDestination);
-
-  var cardDeleteBtn = document.createElement("button");
-  cardDeleteBtn.setAttribute("class", "btn btn-danger");
-  cardDeleteBtn.innerText = "Remove";
-  cardDeleteBtn.addEventListener("click", removeDestination);
-
-  buttonsContainer.appendChild(cardEditBtn);
-  buttonsContainer.appendChild(cardDeleteBtn);
-  ardBody.appendChild(buttonsContainer);
-
-  card.appendChild(cardBody);
-
-  return card;
-}
-
-function removeDestination(e) {
-  var cardBody = e.target.parentElement.parentElement;
-  var card = cardBody.parentElement;
-  card.remove();
 }
