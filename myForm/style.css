@@ -1,0 +1,12 @@
+body {
+  background-color: aliceblue;
+}
+
+#myForm {
+  display: block;
+  margin: 10px;
+}
+
+.text_center {
+  text-align: center;
+}
