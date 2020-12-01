@@ -24,12 +24,10 @@ function formFunc(e) {
   );
   let cardContainer = document.querySelector(".destination_card");
 
-  //   if (!cardContainer.contains(child)) {
-  //     document.querySelector(".title").innerHTML = "My Wishlist";
-  //   }
-  if (cardContainer.children.length === 0) {
-    document.querySelector("#title").innerHTML = "My WishList";
+  if (cardContainer.contains(child) === false) {
+    document.getElementById("title").innerHTML = "My Wishlist";
   }
+  //appends child with all the values of the form.
   cardContainer.appendChild(allElementsContainer);
 }
 
